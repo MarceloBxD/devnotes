@@ -111,7 +111,14 @@ const EditNoteScreen = () => {
             padding: 20,
           }}
           onPress={handleDeleteNote}>
-          <SaveButtonImg source={require('../../assets/remove.png')} />
+          <>
+            <Text style={{marginRight: 40}}>Delete</Text>
+            <SaveButtonImg
+              style={{marginRight: 30}}
+              source={require('../../assets/arrow.png')}
+            />
+            <SaveButtonImg source={require('../../assets/remove.png')} />
+          </>
         </SaveButton>
       )}
     </Container>
