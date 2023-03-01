@@ -25,7 +25,7 @@ const ListScreen = () => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: 'Minhas Notas',
+      headerTitle: 'Notas',
       headerRight: () => (
         <TouchableHighlight
           underlayColor="transparent"
@@ -44,6 +44,14 @@ const ListScreen = () => {
         <NoNotes>
           <NoNotesImage source={require('../../assets/error.png')} />
           <NoNotesText>Nenhuma nota encontrada!</NoNotesText>
+          <TouchableHighlight
+            underlayColor="transparent"
+            onPress={() => navigation.navigate('EditNote')}>
+            <Image
+              source={require('../../assets/add.png')}
+              style={{width: 60, height: 60, marginTop: 20}}
+            />
+          </TouchableHighlight>
         </NoNotes>
       )}
       {list.length > 0 && (
