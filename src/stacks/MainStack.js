@@ -13,6 +13,7 @@ const MainStack = () => {
         headerStyle: {
           backgroundColor: '#222',
         },
+        headerTitleAlign: 'left',
         headerTitleStyle: {
           color: '#fff',
         },

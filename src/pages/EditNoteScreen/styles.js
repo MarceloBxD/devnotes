@@ -9,7 +9,7 @@ export const TitleInput = styled.TextInput`
   font-size: 20px;
   color: #fff;
   border-bottom-width: 1px;
-  border-color: #fff;
+  border-color: #ccc;
   padding: 10px;
   font-weight: bold;
 `;
@@ -30,12 +30,12 @@ export const SaveButtonImg = styled.Image`
   height: 30px;
 `;
 
-export const DeleteButton = styled.Button`
-  justify-content: center;
-  align-items: center;
+export const DeleteButtonImg = styled.Image`
+  width: 40px;
+  height: 40px;
 `;
 
-export const DeleteButtonText = styled.Text`
+export const DeleteButtonText = styled.TouchableHighlight`
   font-size: 15px;
   color: #ff0000;
 `;

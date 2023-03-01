@@ -3,7 +3,7 @@ import {Box, Title} from './styles';
 
 export default ({data, index, onPress}) => {
   return (
-    <Box onPress={() => onPress(index)}>
+    <Box underlayColor="#ddd" onPress={() => onPress(index)}>
       <Title>{data.title}</Title>
     </Box>
   );

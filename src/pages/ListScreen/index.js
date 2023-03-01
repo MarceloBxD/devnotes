@@ -1,5 +1,5 @@
 import React, {useLayoutEffect} from 'react';
-import {Image, TouchableHighlight} from 'react-native';
+import {Image, TouchableHighlight, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 
@@ -26,16 +26,16 @@ const ListScreen = () => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: 'Notas',
-      headerRight: () => (
-        <TouchableHighlight
-          underlayColor="transparent"
-          onPress={() => navigation.navigate('EditNote')}>
-          <Image
-            source={require('../../assets/add.png')}
-            style={{width: 30, height: 30, marginRight: 10}}
-          />
-        </TouchableHighlight>
-      ),
+      // headerRight: () => (
+      //   <TouchableHighlight
+      //     underlayColor="transparent"
+      //     onPress={() => navigation.navigate('EditNote')}>
+      //     <Image
+      //       source={require('../../assets/add.png')}
+      //       style={{width: 30, height: 30, marginRight: 10}}
+      //     />
+      //   </TouchableHighlight>
+      // ),
     });
   }, []);
   return (
@@ -55,13 +55,25 @@ const ListScreen = () => {
         </NoNotes>
       )}
       {list.length > 0 && (
-        <NotesList
-          data={list}
-          renderItem={({item, index}) => (
-            <NoteItem data={item} index={index} onPress={handleNotePress} />
-          )}
-          keyExtractor={(item, index) => index.toString()}
-        />
+        <>
+          <NotesList
+            data={list}
+            renderItem={({item, index}) => (
+              <NoteItem data={item} index={index} onPress={handleNotePress} />
+            )}
+            keyExtractor={(item, index) => index.toString()}
+          />
+          <View style={{paddingBottom: 20}}>
+            <TouchableHighlight
+              underlayColor="transparent"
+              onPress={() => navigation.navigate('EditNote')}>
+              <Image
+                source={require('../../assets/add.png')}
+                style={{width: 60, height: 60, marginTop: 20}}
+              />
+            </TouchableHighlight>
+          </View>
+        </>
       )}
     </Container>
   );

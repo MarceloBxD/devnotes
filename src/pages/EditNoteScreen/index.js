@@ -1,5 +1,5 @@
 import React, {useLayoutEffect, useState, useEffect} from 'react';
-import {Image, TouchableHighlight} from 'react-native';
+import {Text} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {useNavigation, useRoute} from '@react-navigation/native';
 
@@ -9,8 +9,9 @@ import {
   BodyInput,
   SaveButton,
   SaveButtonImg,
-  DeleteButton,
+  DeleteButtonText,
 } from './styles';
+import {TouchableHighlight} from 'react-native-gesture-handler';
 
 const EditNoteScreen = () => {
   const navigation = useNavigation();
@@ -88,7 +89,7 @@ const EditNoteScreen = () => {
       <TitleInput
         value={title}
         onChangeText={t => setTitle(t)}
-        cursorColor="red"
+        cursorColor="blue"
         autoFocus={true}
         placeholderTextColor="#ccc"
         placeholder="Título"
@@ -97,13 +98,21 @@ const EditNoteScreen = () => {
         value={body}
         onChangeText={t => setBody(t)}
         placeholderTextColor="#ccc"
-        cursorColor="red"
+        cursorColor="blue"
         multiline={true}
         textAlignVertical="top"
-        placeholder="Corpo"
+        placeholder="Descrição"
       />
       {status == 'edit' && (
-        <DeleteButton onPress={handleDeleteNote} color="#f00" title="Apagar" />
+        <SaveButton
+          underlayColor="transparent"
+          style={{
+            alignItems: 'flex-end',
+            padding: 20,
+          }}
+          onPress={handleDeleteNote}>
+          <SaveButtonImg source={require('../../assets/remove.png')} />
+        </SaveButton>
       )}
     </Container>
   );
