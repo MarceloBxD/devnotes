@@ -1,6 +1,6 @@
 # devnotes
 
-## Esse projeto foi feito em React Native, e é basicamente um aplicativo de notas, parecido com o do iphone mesmo, para salvar algo, com um título e um body(corpo).
+### Projeto feito em React Native, e é basicamente um aplicativo de notas, parecido com o do iphone mesmo, para salvar algo, com um título e um body(corpo).
 
 > Instalação do projeto
 
